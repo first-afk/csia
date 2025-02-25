@@ -1,14 +1,14 @@
 const container = document.getElementById("col");
 
 document.addEventListener("DOMContentLoaded", async function () {
-  // const token = localStorage.getItem("token");
-  // if (!token) {
-  //   alert("You need to login first!");
-  //   window.location.href = "login.html";
-  // }
+  const token = localStorage.getItem("token");
+  if (!token) {
+    alert("You need to login first!");
+    window.location.href = "login.html";
+  }
   try {
     const response = await fetch(
-      "https://backend-vercel-seeqgold-sikirat-amobigold-s-projects.vercel.app/api/report",
+      "https://backend-vercel-f4aqq1leu-csia-s-projects.vercel.app/api/report",
       {
         method: "GET",
         headers: {
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", async function () {
           const reportId = this.getAttribute("data-id");
           try {
             const deleteResponse = await fetch(
-              `https://backend-vercel-seeqgold-sikirat-amobigold-s-projects.vercel.app/api/report/${reportId}`,
+              `https://backend-vercel-f4aqq1leu-csia-s-projects.vercel.app/api/report/${reportId}`,
               {
                 method: "DELETE",
                 headers: {
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         container.appendChild(newDiv);
       });
-    } else{
+    } else {
       console.error("Failed to fetch data");
       alert("Failed to load reports");
     }
@@ -108,4 +108,3 @@ document.addEventListener("DOMContentLoaded", async function () {
     console.error("error fetching data", error);
   }
 });
-
