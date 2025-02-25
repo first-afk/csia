@@ -13,7 +13,7 @@
   opacity: 0.9;
 }
 
-.icon-col a {
+.icon-col a, .name a {
   text-decoration: none;
   color: black;
 }
